@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminaBible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js" type="module"></script>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="app-container">
+        <header class="mobile-header">
+            <button id="menu-toggle" class="icon-btn"><i data-lucide="menu"></i></button>
+            <h1 class="logo">Lumina</h1>
+            <button id="theme-toggle-mobile" class="icon-btn">
+                <i data-lucide="moon"></i>
+            </button>
+        </header>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">LuminaBible</h1>
+            </div>
+            <div class="controls">
+                <div class="select-wrapper">
+                    <label for="translation">Translation</label>
+                    <select id="translation-select">
+                        <option value="web">World English Bible (WEB)</option>
+                        <option value="kjv">King James Version (KJV)</option>
+                        <option value="bbe">Bible in Basic English</option>
+                        <option value="oeb-us">Open English Bible (US)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="nav-tabs">
+                <button class="tab-btn active" data-tab="ot">Old Testament</button>
+                <button class="tab-btn" data-tab="nt">New Testament</button>
+            </div>
+            <div class="books-list" id="books-list">
+                <div class="loading-spinner"></div>
+            </div>
+        </aside>
+        <main class="content-area">
+            <header class="content-header">
+                <div class="current-ref">
+                    <h2 id="current-chapter-title">Select a Book</h2>
+                    <div class="chapter-nav">
+                        <button id="prev-chapter" class="nav-btn" disabled>
+                            <i data-lucide="chevron-left"></i>
+                        </button>
+                        <button id="next-chapter" class="nav-btn" disabled>
+                            <i data-lucide="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="desktop-controls">
+                    <button id="theme-toggle-desktop" class="icon-btn" title="Toggle Theme">
+                        <i data-lucide="moon"></i>
+                    </button>
+                </div>
+            </header>
+            <div id="bible-text-container" class="text-container">
+                <div class="placeholder-message">
+                    <i data-lucide="book-open size-48"></i>
+                    <p>Select a book from the menu to begin reading.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script>
+    lucide.createIcons();
+</script>
+</html>
